@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from webapp.views import IndexViews
+
 api_url = [
     path('v1/', include('api_v1.urls'))
 ]
@@ -23,4 +25,5 @@ api_url = [
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(api_url)),
+    path('', IndexViews.as_view(), name='index'),
 ]

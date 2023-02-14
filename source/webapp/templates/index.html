@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 style="text-align: center">Quotes <i class="bi bi-bookmark-check"></i></h1>
+    <div class="row">
+    {% for quote in quotes %}
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body" style="font-weight: bold">
+            <p>Text: {{ quote.text }}</p>
+            <p>Name: {{ quote.name }}</p>
+            <p>Email: {{ quote.email }}</p>
+            <p>Rating: {{ quote.rating }}</p>
+            <p>Status: {{ quote.status }}</p>
+
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+{% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+{% endif %}
+
+{% endblock %}

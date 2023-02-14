@@ -14,7 +14,4 @@ class Quote(models.Model):
                                     verbose_name="Категория")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата начала")
 
-    # def get_absolute_url(self):
-    #     return reverse('webapp:quote_view', kwargs={'pk': self.pk})
-
 
